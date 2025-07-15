@@ -6,10 +6,11 @@
       font-family: Arial, sans-serif;
       margin: 0;
       background-image: url('../pics/bakron.jpg');
-     background-size: cover;
-    background-position: center;
-     background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       background-color: #f4f4f4;
+      color: white;
     }
 
     header {
@@ -44,15 +45,15 @@
     }
 
     .tab-content {
-  display: none;
-  max-width: 800px;
-  margin: 30px auto;
-  padding: 20px;
-  color: #ffffff;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
-  backdrop-filter: blur(4px);
-}
+      display: none;
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      color: #ffffff;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+      backdrop-filter: blur(4px);
+    }
 
     .tab-content.active {
       display: block;
@@ -62,6 +63,12 @@
       width: 150px;
       border-radius: 50%;
       margin-bottom: 10px;
+    }
+
+    .social-icons img {
+      width: 32px;
+      margin: 5px;
+      vertical-align: middle;
     }
   </style>
 </head>
@@ -74,38 +81,60 @@
   <nav>
     <button class="tab-button active" onclick="showTab('about')">About Me</button>
     <button class="tab-button" onclick="showTab('projects')">Projects</button>
+    <button class="tab-button" onclick="showTab('skills')">Skills</button>
   </nav>
 
   <div id="about" class="tab-content active">
     <center>
-      <a href = "https://web.facebook.com/abramjacob.cadiz/"><img src="../pics/profpc.jpg" alt="Profile Photo"></a>
+      <img src="../pics/profpc.jpg" alt="Profile Photo">
     </center>
     <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
       <div style="flex: 1;">
-    <h2>About Me</h2>
-    <p>My name is Abram Jacob Cadiz. <br>I was born in September 20, 2007<br> I live in Brgy. Talacuan Leon, Iloilo</p>
-    <p>Contact No. 09687283110 <br> Email: cadizpower@gmail.com</p>
-    </div>
+        <h2>About Me</h2>
+        <p>My name is Abram Jacob Cadiz.<br>
+        I was born in September 20, 2007<br>
+        I live in Brgy. Talacuan Leon, Iloilo</p>
+        <p>Contact No. 09687283110</p>
+        <p>Socials:</p>
 
-    <div style="flex: 1;">
-      <h2>Hobbies</h2>
-      <ul>
-        <li>Readng books
-        <li>Playing video games</li>
-        <li>Coding</li>
-        <li>Watching Historical Videos</li>
-      </ul>
+        <div class="social-icons">
+          <a href="https://web.facebook.com/abramjacob.cadiz/" target="_blank">
+            <img src="../pics/fakbok.png" alt="Facebook">
+          </a>
+          <a href="https://github.com/miiewoo" target="_blank">
+            <img src="../pics/gitub3.png" alt="GitHub">
+          </a>
+          <a href="mailto:snisboii@gmail.com">
+            <img src="../pics/gemail2.png" alt="Gmail">
+          </a>
+        </div>
+      </div>
+
+      <div style="flex: 1;">
+        <h2>Hobbies</h2>
+        <ul>
+          <li>Reading books</li>
+          <li>Playing video games</li>
+          <li>Coding</li>
+          <li>Watching Historical Videos</li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
 
-      <div>
-        <h2>Skills</h2>
-      </div>
-    
+
   <div id="projects" class="tab-content">
     <h2>Projects</h2>
-    <p>Currently empty :( </p>
+    <p>Currently empty :(</p>
+  </div>
+
+  <div id="skills" class="tab-content">
+    <h2>Skills</h2>
+    <ul>
+      <li>Basic Java, HTML, CSS, JavaScript programming skills</li>
+      <li>Videography</li>
+      <li>Photography</li>
+    </ul>
   </div>
 
   <script>
