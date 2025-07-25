@@ -79,9 +79,9 @@
   </header>
 
   <nav>
-    <button class="tab-button active" onclick="showTab('about')">About Me</button>
-    <button class="tab-button" onclick="showTab('projects')">Projects</button>
-    <button class="tab-button" onclick="showTab('skills')">Skills</button>
+    <button class="tab-button active" onclick="showTab('about', this)">About Me</button>
+    <button class="tab-button" onclick="showTab('projects', this)">Projects</button>
+    <button class="tab-button" onclick="showTab('skills', this)">Skills</button>
   </nav>
 
   <div id="about" class="tab-content active">
@@ -122,10 +122,14 @@
     </div>
   </div>
 
-
   <div id="projects" class="tab-content">
     <h2>Projects</h2>
-    <p>Currently empty :(</p>
+    <p>Timeline Project</p>
+
+    <p>Click to open:</p>
+    <a href="timlin.pdf" target="_blank">
+      <img src="../pics/timlin.png" alt="PDF Preview" style="width: 300px; border-radius: 8px;">
+    </a>
   </div>
 
   <div id="skills" class="tab-content">
@@ -138,7 +142,7 @@
   </div>
 
   <script>
-    function showTab(tabId) {
+    function showTab(tabId, element) {
       document.querySelectorAll('.tab-content').forEach(tab => {
         tab.classList.remove('active');
       });
@@ -148,8 +152,7 @@
       });
 
       document.getElementById(tabId).classList.add('active');
-
-      event.target.classList.add('active');
+      element.classList.add('active');
     }
   </script>
 
