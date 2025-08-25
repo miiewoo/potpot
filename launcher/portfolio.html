@@ -70,6 +70,33 @@
       margin: 5px;
       vertical-align: middle;
     }
+
+    #fullscreenModal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      text-align: center;
+    }
+
+    #fullscreenModal img {
+      width: 100%;
+  height: 100%;
+  object-fit: contain;
+    }
+
+    #fullscreenModal span {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -124,12 +151,18 @@
 
   <div id="projects" class="tab-content">
     <h2>Projects</h2>
-    <p>Timeline Project</p>
 
+    <p>Timeline Project</p>
     <p>Click to open:</p>
     <a href="timlin.pdf" target="_blank">
       <img src="../pics/timlin.png" alt="PDF Preview" style="width: 300px; border-radius: 8px;">
     </a>
+
+    <hr style="margin: 20px 0; border: 1px solid #555;">
+
+    <p>Media Project</p>
+    <p>Click to enlarge:</p>
+    <img src="../pics/Pos.jpg" alt="Second Project" style="width: 300px; border-radius: 8px; cursor: pointer;" onclick="openFullscreen(this)">
   </div>
 
   <div id="skills" class="tab-content">
@@ -139,6 +172,12 @@
       <li>Videography</li>
       <li>Photography</li>
     </ul>
+  </div>
+
+
+  <div id="fullscreenModal">
+    <span onclick="closeFullscreen()">&times;</span>
+    <img id="fullscreenImg" src="">
   </div>
 
   <script>
@@ -153,6 +192,15 @@
 
       document.getElementById(tabId).classList.add('active');
       element.classList.add('active');
+    }
+
+    function openFullscreen(imgElement) {
+      document.getElementById("fullscreenModal").style.display = "block";
+      document.getElementById("fullscreenImg").src = imgElement.src;
+    }
+
+    function closeFullscreen() {
+      document.getElementById("fullscreenModal").style.display = "none";
     }
   </script>
 
